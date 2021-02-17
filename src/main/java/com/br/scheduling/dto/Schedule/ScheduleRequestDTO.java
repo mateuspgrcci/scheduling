@@ -19,11 +19,11 @@ public class ScheduleRequestDTO implements Serializable {
 
     private String status;
 
-    private Integer professionalId;
+    private UUID professionalId;
 
-    private Integer serviceId;
+    private UUID serviceId;
 
-    private Integer clientId;
+    private UUID clientId;
 
     private boolean active;
 }

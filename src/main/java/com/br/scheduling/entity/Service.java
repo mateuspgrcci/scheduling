@@ -3,19 +3,24 @@ package com.br.scheduling.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(schema = "db", name = "Service")
-public class Service {
+public class Service implements Serializable {
+
     @Id
-    @SequenceGenerator(name="service_seq", sequenceName="db.service_id_seq", allocationSize=1)
-    @GeneratedValue(generator="service_seq", strategy=GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(nullable = false, unique = true, updatable = false)
+    private UUID id;
 
     @Column(nullable = false)
     private String name;

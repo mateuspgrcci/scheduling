@@ -1,15 +1,18 @@
-package com.br.scheduling.dto;
+package com.br.scheduling.dto.Professional;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.util.UUID;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProfessionalDTO {
+public class ProfessionalDTO implements Serializable {
 
-    private Long id;
+    private UUID id;
 
     private String name;
 
