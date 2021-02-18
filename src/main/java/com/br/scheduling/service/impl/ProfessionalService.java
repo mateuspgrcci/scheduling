@@ -35,4 +35,9 @@ public class ProfessionalService implements IProfessionalService {
     public void store(ProfessionalDTO professionalDTO) {
         repository.save(mapper.toEntity(professionalDTO));
     }
+
+    @Override
+    public void update(ProfessionalDTO professionalDTO) {
+        repository.save(mapper.toEntity(professionalDTO));
+    }
 }

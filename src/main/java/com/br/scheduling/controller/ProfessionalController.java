@@ -1,6 +1,7 @@
 package com.br.scheduling.controller;
 
 import com.br.scheduling.dto.Professional.ProfessionalDTO;
+import com.br.scheduling.dto.Schedule.ScheduleRequestDTO;
 import com.br.scheduling.service.IProfessionalService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,6 +38,13 @@ public class ProfessionalController {
     @ApiOperation(value = "Register a professional")
     public ResponseEntity<String> store(@RequestBody ProfessionalDTO professionalDTO) {
         service.store(professionalDTO);
-        return new ResponseEntity<>("Schedule successfully saved", HttpStatus.OK);
+        return new ResponseEntity<>("Professional successfully saved", HttpStatus.OK);
+    }
+
+    @PutMapping(path = "/professional")
+    @ApiOperation(value = "Update a professional")
+    public ResponseEntity<String> update(@RequestBody ProfessionalDTO professionalDTO) {
+        service.update(professionalDTO);
+        return new ResponseEntity<>("Professional changed successfully", HttpStatus.OK);
     }
 }

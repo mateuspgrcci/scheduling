@@ -41,7 +41,7 @@ public class ScheduleController {
         return new ResponseEntity<>("Schedule successfully saved", HttpStatus.OK);
     }
 
-    @PutMapping(path = "/schedule/{id}")
+    @PutMapping(path = "/schedule")
     @ApiOperation(value = "Update a scheduling")
     public ResponseEntity<String> update(@RequestBody ScheduleRequestDTO scheduleRequestDTO) {
         service.update(scheduleRequestDTO);
