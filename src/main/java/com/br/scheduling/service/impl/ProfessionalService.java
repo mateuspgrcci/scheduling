@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -23,6 +24,11 @@ public class ProfessionalService implements IProfessionalService {
     @Override
     public List<ProfessionalDTO> findAll() {
         return mapper.toListDto(repository.findAll());
+    }
+
+    @Override
+    public ProfessionalDTO findById(UUID id) {
+        return mapper.toDto(repository.findById(id).orElse(null));
     }
 
     @Override

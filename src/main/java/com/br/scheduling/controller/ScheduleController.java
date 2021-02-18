@@ -29,7 +29,7 @@ public class ScheduleController {
     }
 
     @GetMapping(path = "/schedule/{id}")
-    @ApiOperation(value = "Get scheduling by param")
+    @ApiOperation(value = "Get scheduling by id")
     public ResponseEntity<ScheduleResponseDTO> findByParam(@PathVariable UUID id) {
         return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
     }
