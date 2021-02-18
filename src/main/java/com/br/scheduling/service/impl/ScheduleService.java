@@ -48,6 +48,7 @@ public class ScheduleService implements IScheduleService {
 
     @Override
     public void delete(ScheduleRequestDTO scheduleRequestDTO) {
-        repository.delete(mapper.toEntity(scheduleRequestDTO));
+        scheduleRequestDTO.setActive(Boolean.FALSE);
+        repository.save(mapper.toEntity(scheduleRequestDTO));
     }
 }
