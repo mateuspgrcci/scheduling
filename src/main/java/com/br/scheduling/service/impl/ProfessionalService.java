@@ -8,15 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
-public class ProfessinalService implements IProfessionalService {
+public class ProfessionalService implements IProfessionalService {
 
     @Autowired
     IProfessionalMapper mapper;
 
     @Autowired
     IProfessionalRepository repository;
+
+    @Override
+    public List<ProfessionalDTO> findAll() {
+        return mapper.toListDto(repository.findAll());
+    }
 
     @Override
     public void store(ProfessionalDTO professionalDTO) {

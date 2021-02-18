@@ -20,38 +20,38 @@ import java.util.UUID;
 public class ScheduleController {
 
     @Autowired
-    private ScheduleService scheduleService;
+    private ScheduleService service;
 
     @GetMapping(path = "/schedules")
     @ApiOperation(value = "Get all scheduling")
     public ResponseEntity<List<ScheduleResponseDTO>> findAll() {
-        return new ResponseEntity<>(scheduleService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/schedule/{id}")
     @ApiOperation(value = "Get scheduling by param")
     public ResponseEntity<ScheduleResponseDTO> findByParam(@PathVariable UUID id) {
-        return new ResponseEntity<>(scheduleService.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(path = "/schedule")
     @ApiOperation(value = "Make a scheduling")
     public ResponseEntity<String> store(@RequestBody ScheduleRequestDTO scheduleRequestDTO) {
-        scheduleService.store(scheduleRequestDTO);
+        service.store(scheduleRequestDTO);
         return new ResponseEntity<>("Schedule successfully saved", HttpStatus.OK);
     }
 
     @PutMapping(path = "/schedule/{id}")
     @ApiOperation(value = "Update a scheduling")
     public ResponseEntity<String> update(@RequestBody ScheduleRequestDTO scheduleRequestDTO) {
-        scheduleService.update(scheduleRequestDTO);
+        service.update(scheduleRequestDTO);
         return new ResponseEntity<>("Scheduling changed successfully", HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/schedule")
     @ApiOperation(value = "Delete a scheduling")
     public ResponseEntity<String> delete(@RequestBody ScheduleRequestDTO scheduleRequestDTO) {
-        scheduleService.delete(scheduleRequestDTO);
+        service.delete(scheduleRequestDTO);
         return new ResponseEntity<>("Scheduling successfully deleted", HttpStatus.OK);
     }
 }
