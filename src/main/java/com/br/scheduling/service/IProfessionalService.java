@@ -11,7 +11,9 @@ public interface IProfessionalService {
 
     ProfessionalDTO findById(UUID id);
 
-    void store (ProfessionalDTO professionalDTO);
+    void store (ProfessionalDTO dto);
 
-    void update (ProfessionalDTO professionalDTO);
+    void update (ProfessionalDTO dto);
+
+    void delete (ProfessionalDTO dto);
 }

@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
-@Api(value = "Scheduling API REST")
+@Api()
 @CrossOrigin(origins = "*")
 public class ScheduleController {
 

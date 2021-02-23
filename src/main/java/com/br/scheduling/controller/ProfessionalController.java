@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "/api")
-@Api(value = "Scheduling API REST")
+@Api()
 @CrossOrigin(origins = "*")
 public class ProfessionalController {
 
@@ -46,5 +46,12 @@ public class ProfessionalController {
     public ResponseEntity<String> update(@RequestBody ProfessionalDTO professionalDTO) {
         service.update(professionalDTO);
         return new ResponseEntity<>("Professional changed successfully", HttpStatus.OK);
+    }
+
+    @DeleteMapping(path = "/professional")
+    @ApiOperation(value = "Delete a professional")
+    public ResponseEntity<String> delete(@RequestBody ProfessionalDTO professionalDTO) {
+        service.delete(professionalDTO);
+        return new ResponseEntity<>("Professional successfully deleted", HttpStatus.OK);
     }
 }
