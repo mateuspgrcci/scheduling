@@ -32,7 +32,7 @@ public class Schedule implements Serializable {
     private String status;
 
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client", nullable = false)
@@ -40,7 +40,7 @@ public class Schedule implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service", nullable = false)
-    private Service service;
+    private Procedure procedure;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "professional", nullable = false)

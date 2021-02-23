@@ -21,9 +21,9 @@ public class ScheduleRequestDTO implements Serializable {
 
     private UUID professionalId;
 
-    private UUID serviceId;
+    private UUID procedureId;
 
     private UUID clientId;
 
-    private boolean active;
+    private Boolean active;
 }

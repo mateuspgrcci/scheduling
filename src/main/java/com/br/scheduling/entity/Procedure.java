@@ -13,8 +13,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(schema = "db", name = "Service")
-public class Service implements Serializable {
+@Table(schema = "db", name = "Procedure")
+public class Procedure implements Serializable {
 
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -29,10 +29,10 @@ public class Service implements Serializable {
     private float price;
 
     @Column(nullable = false)
-    private String time;
+    private String timing;
 
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "professional", nullable = false)

@@ -26,5 +26,5 @@ public class ClientDTO implements Serializable {
 
     private String gender;
 
-    private boolean active;
+    private Boolean active;
 }

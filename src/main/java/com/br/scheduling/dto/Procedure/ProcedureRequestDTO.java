@@ -1,4 +1,4 @@
-package com.br.scheduling.dto;
+package com.br.scheduling.dto.Procedure;
 
 import com.br.scheduling.dto.Professional.ProfessionalDTO;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ServiceDTO implements Serializable {
+public class ProcedureRequestDTO implements Serializable {
 
     private UUID id;
 
@@ -19,9 +19,9 @@ public class ServiceDTO implements Serializable {
 
     private float price;
 
-    private String time;
+    private String timing;
 
-    private boolean active;
+    private Boolean active;
 
-    private ProfessionalDTO professionalDTO;
+    private UUID professionalId;
 }

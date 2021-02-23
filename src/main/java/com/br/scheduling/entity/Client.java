@@ -41,5 +41,5 @@ public class Client implements Serializable {
     private String gender;
 
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 }

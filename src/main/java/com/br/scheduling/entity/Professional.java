@@ -26,5 +26,5 @@ public class Professional implements Serializable {
     private String name;
 
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 }

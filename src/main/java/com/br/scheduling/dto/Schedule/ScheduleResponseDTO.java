@@ -21,7 +21,7 @@ public class ScheduleResponseDTO implements Serializable {
 
     private String professionalName;
 
-    private String serviceName;
+    private String procedureName;
 
     private String clientName;
 
