@@ -33,6 +33,7 @@ public class ClientService implements IClientService {
 
     @Override
     public void store(ClientDTO dto) {
+        dto.setActive(Boolean.TRUE);
         repository.save(mapper.toEntity(dto));
     }
 

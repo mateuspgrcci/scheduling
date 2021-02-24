@@ -1,9 +1,11 @@
 package com.br.scheduling.entity;
 
+import com.br.scheduling.util.BooleanConverter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(schema = "db", name = "Client")
+@Where(clause = "active = 1")
 public class Client implements Serializable {
 
     @Id
@@ -41,5 +44,6 @@ public class Client implements Serializable {
     private String gender;
 
     @Column(nullable = false)
+    @Convert(converter = BooleanConverter.class)
     private Boolean active;
 }

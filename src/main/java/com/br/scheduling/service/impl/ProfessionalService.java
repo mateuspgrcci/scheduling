@@ -32,18 +32,19 @@ public class ProfessionalService implements IProfessionalService {
     }
 
     @Override
-    public void store(ProfessionalDTO professionalDTO) {
-        repository.save(mapper.toEntity(professionalDTO));
+    public void store(ProfessionalDTO dto) {
+        dto.setActive(Boolean.TRUE);
+        repository.save(mapper.toEntity(dto));
     }
 
     @Override
-    public void update(ProfessionalDTO professionalDTO) {
-        repository.save(mapper.toEntity(professionalDTO));
+    public void update(ProfessionalDTO dto) {
+        repository.save(mapper.toEntity(dto));
     }
 
     @Override
-    public void delete(ProfessionalDTO professionalDTO) {
-        professionalDTO.setActive(Boolean.FALSE);
-        repository.save(mapper.toEntity(professionalDTO));
+    public void delete(ProfessionalDTO dto) {
+        dto.setActive(Boolean.FALSE);
+        repository.save(mapper.toEntity(dto));
     }
 }

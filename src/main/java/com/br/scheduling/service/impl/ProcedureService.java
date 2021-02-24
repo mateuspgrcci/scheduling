@@ -34,6 +34,7 @@ public class ProcedureService implements IProcedureService {
 
     @Override
     public void store(ProcedureRequestDTO dto) {
+        dto.setActive(Boolean.TRUE);
         repository.save(mapper.toEntity(dto));
     }
 

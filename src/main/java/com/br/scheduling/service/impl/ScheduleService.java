@@ -37,18 +37,19 @@ public class ScheduleService implements IScheduleService {
     }
 
     @Override
-    public void store(ScheduleRequestDTO scheduleRequestDTO) {
-        repository.save(mapper.toEntity(scheduleRequestDTO));
+    public void store(ScheduleRequestDTO dto) {
+        dto.setActive(Boolean.TRUE);
+        repository.save(mapper.toEntity(dto));
     }
 
     @Override
-    public void update(ScheduleRequestDTO scheduleRequestDTO) {
-        repository.save(mapper.toEntity(scheduleRequestDTO));
+    public void update(ScheduleRequestDTO dto) {
+        repository.save(mapper.toEntity(dto));
     }
 
     @Override
-    public void delete(ScheduleRequestDTO scheduleRequestDTO) {
-        scheduleRequestDTO.setActive(Boolean.FALSE);
-        repository.save(mapper.toEntity(scheduleRequestDTO));
+    public void delete(ScheduleRequestDTO dto) {
+        dto.setActive(Boolean.FALSE);
+        repository.save(mapper.toEntity(dto));
     }
 }

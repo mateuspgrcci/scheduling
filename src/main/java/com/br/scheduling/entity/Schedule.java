@@ -1,10 +1,12 @@
 package com.br.scheduling.entity;
 
+import com.br.scheduling.util.BooleanConverter;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,6 +18,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(schema = "db", name = "Schedule")
+@Where(clause = "active = 1")
 public class Schedule implements Serializable {
 
     @Id
@@ -32,6 +35,7 @@ public class Schedule implements Serializable {
     private String status;
 
     @Column(nullable = false)
+    @Convert(converter = BooleanConverter.class)
     private Boolean active;
 
     @ManyToOne(fetch = FetchType.LAZY)
