@@ -1,4 +1,4 @@
-package com.br.scheduling.dto;
+package com.br.scheduling.dto.Client;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
